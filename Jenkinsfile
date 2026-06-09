@@ -31,7 +31,9 @@ pipeline {
 
         stage('Publish') {
             steps {
+                sh 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc'
                 sh 'npm publish'
+
             }
         }
     }
