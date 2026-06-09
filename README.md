@@ -1,4 +1,4 @@
-# @yourusername/shuffle-array
+# @KlaasStessens/shuffle-array
 
 > A small library that takes an array as input and returns a new array that is shuffled.
 
