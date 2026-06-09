@@ -9,7 +9,7 @@ pipeline {
     environment {
 
         NPM_TOKEN = credentials('NPM_TOKEN')
-
+        PATH = "${tool 'NodeJS'}/bin:${env.PATH}"
     }
 
     stages {
@@ -17,6 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 nodejs('NodeJS') {
+                    sh 'node --version'
                     sh 'npm install'
                 }
             }
