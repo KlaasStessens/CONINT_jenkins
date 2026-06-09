@@ -16,22 +16,27 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'node --version'
-                sh 'npm install'
+                nodejs('NodeJS') {
+                    sh 'node --version'
+                    sh 'npm install'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test'
+                nodejs('NodeJS') {
+                    sh 'npm test'
+                }
             }
         }
 
 
         stage('Publish') {
             steps {
-
-                sh 'npm publish'
+                nodejs('NodeJS') {
+                    sh 'npm publish'
+                }
             }
         }
     }
